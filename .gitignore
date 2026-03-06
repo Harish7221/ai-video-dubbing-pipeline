@@ -1,0 +1,10 @@
+SadTalker/
+input/
+outputs/
+segments/
+.venv/
+__pycache__/
+*.mp4
+*.wav
+*.pth
+*.tar
