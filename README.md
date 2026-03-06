@@ -349,7 +349,7 @@ This architecture would allow the system to process **500+ hours of video overni
 Example output:
 
 
-outputs/dubbed_video.mp4
+outputs/final_dubbed_video.mp4
 
 
 A Hindi dubbed version of the selected video segment with synchronized lip movements.
