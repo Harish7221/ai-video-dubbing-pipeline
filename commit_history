@@ -1,0 +1,7 @@
+Added project documentation and setup instructions
+Added silence-based audio segmentation for long audio
+Implemented audio/video merge with FFmpeg
+Added Hindi voice generation with Sarvam TTS
+Implemented Kannada to Hindi translation
+Added speech transcription using Sarvam ASR
+Initial pipeline setup with video clip and audio extraction
