@@ -109,6 +109,7 @@ Add your Sarvam API key in:
 
 modules/transcribe.py
 modules/generate_voice.py
+modules/translate.py
 
 
 ---
@@ -122,6 +123,7 @@ input/video.mp4
 
 
 Then run:
+
 
 
 python dub_video.py
@@ -156,6 +158,95 @@ SadTalker (for lip synchronization)
 
 
 ---
+## SadTalker External Dependencies
+
+SadTalker is used in this project to generate lip-synced video from the Hindi audio.  
+It requires additional deep learning libraries and pretrained models.
+
+---
+
+### 1. Python Dependencies
+
+SadTalker requires the following Python packages:
+
+
+torch
+torchvision
+torchaudio
+numpy
+scikit-image
+opencv-python
+facexlib
+kornia
+yacs
+gfpgan
+basicsr
+
+
+Example installation:
+
+
+pip install torch torchvision torchaudio
+pip install numpy opencv-python scikit-image
+pip install facexlib kornia yacs gfpgan basicsr
+2. FFmpeg
+
+SadTalker relies on FFmpeg for video processing.
+
+Install from:
+
+https://ffmpeg.org/download.html
+
+Verify installation:
+
+ffmpeg -version
+3. GPU Support (Recommended)
+
+
+SadTalker performs best when running on GPU.
+
+Recommended configuration:
+
+NVIDIA GPU
+
+CUDA 11+
+
+Example PyTorch installation with CUDA:
+
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+SadTalker can run on CPU, but processing will be significantly slower.
+
+4. SadTalker Model Checkpoints
+
+The following pretrained models are required:
+
+
+SadTalker\_V0.0.2\_256.safetensors  
+mapping\_00229-model.pth.tar  
+
+
+Place them inside:
+
+
+SadTalker/checkpoints/
+
+
+These models are used for:
+
+facial animation
+
+expression modeling
+
+lip synchronization
+
+5. Running SadTalker
+
+Example command:
+
+cd SadTalker 
+python inference.py --driven_audio ../outputs/hindi_audio.wav --source_image ../outputs/new_frame.jpg --result_dir ../outputs --preprocess full --enhancer gfpgan
+ffmpeg -i "../outputs/2026_03_05_20.54.20.mp4" -i "../outputs/hindi_audio.wav" -map 0:v:0 -map 1:a:0 -c:v copy -c:a aac -shortest "../outputs/final_dubbed_video.mp4"
 
 # Estimated Cost if Scaled
 
