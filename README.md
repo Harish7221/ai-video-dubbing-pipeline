@@ -189,7 +189,7 @@ Example installation:
 pip install torch torchvision torchaudio
 pip install numpy opencv-python scikit-image
 pip install facexlib kornia yacs gfpgan basicsr
-2. FFmpeg
+### 2. FFmpeg
 
 SadTalker relies on FFmpeg for video processing.
 
@@ -200,7 +200,8 @@ https://ffmpeg.org/download.html
 Verify installation:
 
 ffmpeg -version
-3. GPU Support (Recommended)
+
+### 3. GPU Support (Recommended)
 
 
 SadTalker performs best when running on GPU.
@@ -217,11 +218,11 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 
 SadTalker can run on CPU, but processing will be significantly slower.
 
-4. SadTalker Model Checkpoints
+### 4. SadTalker Model Checkpoints
 
 The following pretrained models are required:
 
-
+epoch_20.pth
 SadTalker\_V0.0.2\_256.safetensors  
 mapping\_00229-model.pth.tar  
 
@@ -240,7 +241,7 @@ expression modeling
 
 lip synchronization
 
-5. Running SadTalker
+### 5. Running SadTalker
 
 Example command:
 
